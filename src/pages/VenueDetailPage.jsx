@@ -77,10 +77,10 @@ const VenueDetailPage = () => {
         <div className="flex justify-between items-start">
           <div>
             <button
-              onClick={() => navigate('/venues')}
+              onClick={() => navigate('/admin/venues')}
               className="text-red-600 hover:text-red-700 mb-2 flex items-center"
             >
-              ← Back to Venues
+              &larr; Back to Venues
             </button>
             <h1 className="text-3xl font-bold text-gray-900">{venue.name}</h1>
             <p className="text-gray-600">{venue.address}</p>

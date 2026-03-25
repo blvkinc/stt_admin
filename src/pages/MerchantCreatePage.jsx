@@ -35,15 +35,13 @@ const MerchantCreatePage = () => {
     })
 
     // Check authentication
-    
-  if (!isMerchantAuthenticated) {
-    return <Navigate to="/auth" replace />
-  }
+    if (!isMerchantAuthenticated) {
+        return <Navigate to="/admin/auth" replace />
+    }
 
-    
-  if (merchant?.role !== 'super_admin') {
-    return <Navigate to="/auth" replace />
-  }
+    if (merchant?.role !== 'super_admin') {
+        return <Navigate to="/admin/auth" replace />
+    }
 
     const categories = [
         'Fine Dining',
@@ -99,7 +97,7 @@ const MerchantCreatePage = () => {
                 {/* Header */}
                 <div>
                     <Link
-                        to="/merchants"
+                        to="/admin/merchants"
                         className="inline-flex items-center space-x-2 text-neutral-600 hover:text-red-500 mb-4 transition-colors"
                     >
                         <ArrowLeft className="w-5 h-5" />
@@ -304,7 +302,7 @@ const MerchantCreatePage = () => {
                         </div>
 
                         <div className="flex justify-end space-x-3 pt-6 border-t border-neutral-100">
-                            <Link to="/merchants" className="btn-secondary px-6 py-2 flex items-center">
+                            <Link to="/admin/merchants" className="btn-secondary px-6 py-2 flex items-center">
                                 Cancel
                             </Link>
                             <button
@@ -324,5 +322,3 @@ const MerchantCreatePage = () => {
 }
 
 export default MerchantCreatePage
-
-

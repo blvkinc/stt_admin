@@ -40,29 +40,30 @@ function App() {
           <MerchantProvider>
             <Router>
               <Routes>
-                <Route path="/auth" element={<AdminAuthPage />} />
-                <Route path="/" element={<Navigate to="/dashboard" replace />} />
-                <Route path="/dashboard" element={<SuperAdminDashboard />} />
-                <Route path="/venues" element={<VenuesManagement />} />
-                <Route path="/venues/:venueId" element={<VenueDetailPage />} />
-                <Route path="/merchants" element={<MerchantsManagement />} />
-                <Route path="/merchants/invite" element={<InviteMerchant />} />
-                <Route path="/merchants/new" element={<MerchantCreatePage />} />
-                <Route path="/merchants/:id/edit" element={<EditMerchantPage />} />
-                <Route path="/users" element={<UsersManagement />} />
-                <Route path="/events" element={<EventsManagement />} />
-                <Route path="/packages" element={<PackagesManagement />} />
-                <Route path="/categories" element={<CategoriesManagement />} />
-                <Route path="/faqs" element={<FAQsManagement />} />
-                <Route path="/approvals" element={<ApprovalsManagement />} />
-                <Route path="/approvals/queue" element={<ApprovalQueuePage />} />
-                <Route path="/payments" element={<PaymentsManagement />} />
-                <Route path="/analytics" element={<AnalyticsManagement />} />
-                <Route path="/system" element={<SystemSettings />} />
-                <Route path="/settings" element={<SystemSettings />} />
-                <Route path="/logs" element={<SystemLogsPage />} />
-                <Route path="/reports" element={<ReportsPage />} />
-                <Route path="/profile" element={<AdminProfilePage />} />
+                <Route path="/admin/auth" element={<AdminAuthPage />} />
+                <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="/admin/dashboard" element={<SuperAdminDashboard />} />
+                <Route path="/admin/venues" element={<VenuesManagement />} />
+                <Route path="/admin/venues/:venueId" element={<VenueDetailPage />} />
+                <Route path="/admin/merchants" element={<MerchantsManagement />} />
+                <Route path="/admin/merchants/invite" element={<InviteMerchant />} />
+                <Route path="/admin/merchants/new" element={<MerchantCreatePage />} />
+                <Route path="/admin/merchants/:id/edit" element={<EditMerchantPage />} />
+                <Route path="/admin/users" element={<UsersManagement />} />
+                <Route path="/admin/events" element={<EventsManagement />} />
+                <Route path="/admin/packages" element={<PackagesManagement />} />
+                <Route path="/admin/categories" element={<CategoriesManagement />} />
+                <Route path="/admin/faqs" element={<FAQsManagement />} />
+                <Route path="/admin/approvals" element={<ApprovalsManagement />} />
+                <Route path="/admin/approvals/queue" element={<ApprovalQueuePage />} />
+                <Route path="/admin/payments" element={<PaymentsManagement />} />
+                <Route path="/admin/analytics" element={<AnalyticsManagement />} />
+                <Route path="/admin/system" element={<SystemSettings />} />
+                <Route path="/admin/settings" element={<SystemSettings />} />
+                <Route path="/admin/logs" element={<SystemLogsPage />} />
+                <Route path="/admin/reports" element={<ReportsPage />} />
+                <Route path="/admin/profile" element={<AdminProfilePage />} />
               </Routes>
             </Router>
           </MerchantProvider>

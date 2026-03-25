@@ -24,15 +24,13 @@ const InviteMerchant = () => {
   const [success, setSuccess] = useState('')
   const [inviteType, setInviteType] = useState('single')
 
-  // Check if user is super admin
-  
+  // Check authentication
   if (!isMerchantAuthenticated) {
-    return <Navigate to="/auth" replace />
+    return <Navigate to="/admin/auth" replace />
   }
   
-  
   if (merchant?.role !== 'super_admin') {
-    return <Navigate to="/auth" replace />
+    return <Navigate to="/admin/auth" replace />
   }
 
   const [singleInvite, setSingleInvite] = useState({
@@ -157,7 +155,7 @@ const InviteMerchant = () => {
         {/* Header */}
         <div>
           <Link 
-            to="/merchants" 
+            to="/admin/merchants" 
             className="inline-flex items-center space-x-2 text-neutral-600 hover:text-red-500 mb-4 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -348,13 +346,13 @@ const InviteMerchant = () => {
               </div>
 
               <div className="flex justify-end space-x-3">
-                <Link to="/merchants" className="btn-secondary">
+                <Link to="/admin/merchants" className="btn-secondary px-6 py-2 flex items-center">
                   Cancel
                 </Link>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  className="btn-primary bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 px-6 py-2"
                 >
                   <Send className="w-5 h-5" />
                   <span>{loading ? 'Sending...' : 'Send Invitation'}</span>
@@ -373,7 +371,7 @@ const InviteMerchant = () => {
                 <button
                   type="button"
                   onClick={addBulkInvite}
-                  className="btn-secondary flex items-center space-x-2"
+                  className="btn-secondary flex items-center space-x-2 px-4 py-2"
                 >
                   <Plus className="w-5 h-5" />
                   <span>Add Another</span>
@@ -485,13 +483,13 @@ const InviteMerchant = () => {
               </div>
 
               <div className="flex justify-end space-x-3">
-                <Link to="/merchants" className="btn-secondary">
+                <Link to="/admin/merchants" className="btn-secondary px-6 py-2 flex items-center">
                   Cancel
                 </Link>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  className="btn-primary bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 px-6 py-2"
                 >
                   <Send className="w-5 h-5" />
                   <span>{loading ? 'Sending...' : `Send ${bulkInvites.length} Invitations`}</span>
@@ -506,4 +504,3 @@ const InviteMerchant = () => {
 }
 
 export default InviteMerchant
-

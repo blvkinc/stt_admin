@@ -243,7 +243,7 @@ const MerchantsManagement = () => {
               className="btn-primary"
               icon={<PlusOutlined />}
               size="large"
-              onClick={() => navigate('/merchants/new')} // Assuming creation page or modal exists, but for now just navigate
+              onClick={() => navigate('/admin/merchants/new')} // Assuming creation page or modal exists, but for now just navigate
             >
               Add Merchant
             </Button>

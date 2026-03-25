@@ -50,86 +50,86 @@ const SuperAdminLayout = ({ children }) => {
   } = theme.useToken()
 
   if (!merchant || merchant.role !== 'super_admin') {
-    return <Navigate to="/auth" replace />
+    return <Navigate to="/admin/auth" replace />
   }
 
-  const handleLogout = () => {  logoutMerchant();  navigate('/auth');  }
+  const handleLogout = () => {  logoutMerchant();  navigate('/admin/auth');  }
 
   const menuItems = [
     {
       key: '/admin/dashboard',
       icon: <DashboardOutlined />,
-      label: <Link to="/dashboard">Dashboard</Link>,
+      label: <Link to="/admin/dashboard">Dashboard</Link>,
     },
     {
       key: '/admin/users',
       icon: <TeamOutlined />,
-      label: <Link to="/users">Users</Link>,
+      label: <Link to="/admin/users">Users</Link>,
     },
     {
       key: '/admin/venues',
       icon: <ShopOutlined />,
-      label: <Link to="/venues">Venues</Link>,
+      label: <Link to="/admin/venues">Venues</Link>,
     },
     {
       key: '/admin/merchants',
       icon: <TeamOutlined />,
-      label: <Link to="/merchants">Merchants</Link>,
+      label: <Link to="/admin/merchants">Merchants</Link>,
     },
     {
       key: '/admin/events',
       icon: <CalendarOutlined />,
-      label: <Link to="/events">Events</Link>,
+      label: <Link to="/admin/events">Events</Link>,
     },
     {
       key: '/admin/packages',
       icon: <AppstoreOutlined />,
-      label: <Link to="/packages">Packages</Link>,
+      label: <Link to="/admin/packages">Packages</Link>,
     },
     {
       key: '/admin/categories',
       icon: <TagsOutlined />,
-      label: <Link to="/categories">Categories</Link>,
+      label: <Link to="/admin/categories">Categories</Link>,
     },
     {
       key: '/admin/faqs',
       icon: <QuestionCircleOutlined />,
-      label: <Link to="/faqs">FAQs</Link>,
+      label: <Link to="/admin/faqs">FAQs</Link>,
     },
     {
       key: '/admin/approvals',
       icon: <AlertOutlined />,
-      label: <Link to="/approvals">Approvals</Link>,
+      label: <Link to="/admin/approvals">Approvals</Link>,
     },
     {
       key: '/admin/analytics',
       icon: <BarChartOutlined />,
-      label: <Link to="/analytics">Analytics</Link>,
+      label: <Link to="/admin/analytics">Analytics</Link>,
     },
     {
       key: '/admin/reports',
       icon: <FileTextOutlined />,
-      label: <Link to="/reports">Reports</Link>,
+      label: <Link to="/admin/reports">Reports</Link>,
     },
     {
       key: '/admin/payments',
       icon: <CreditCardOutlined />,
-      label: <Link to="/payments">Payments</Link>,
+      label: <Link to="/admin/payments">Payments</Link>,
     },
     {
       key: '/admin/system',
       icon: <DatabaseOutlined />,
-      label: <Link to="/system">System Health</Link>,
+      label: <Link to="/admin/system">System Health</Link>,
     },
     {
       key: '/admin/logs',
       icon: <FileTextOutlined />,
-      label: <Link to="/logs">Logs</Link>,
+      label: <Link to="/admin/logs">Logs</Link>,
     },
     {
       key: '/admin/settings',
       icon: <SettingOutlined />,
-      label: <Link to="/settings">Settings</Link>,
+      label: <Link to="/admin/settings">Settings</Link>,
     },
   ]
 
@@ -168,7 +168,7 @@ const SuperAdminLayout = ({ children }) => {
             justifyContent: collapsed ? 'center' : 'flex-start',
             background: 'rgba(255,255,255,0.05)'
           }}>
-            <Link to="/dashboard" style={{
+            <Link to="/admin/dashboard" style={{
               display: 'flex',
               alignItems: 'center',
               gap: 12,
